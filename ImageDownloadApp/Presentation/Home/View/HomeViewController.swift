@@ -46,7 +46,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.loadButton.tag = indexPath.item
         
         if isLoadAll {
-            cell.loadAllImage(indexPath: indexPath)
+            cell.loadAllImages(indexPath: indexPath)
         }
         
         return cell

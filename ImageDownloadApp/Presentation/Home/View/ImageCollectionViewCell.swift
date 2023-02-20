@@ -77,7 +77,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func loadAllImage(indexPath: IndexPath) {
+    func loadAllImages(indexPath: IndexPath) {
         imageView.image = UIImage(systemName: "photo")
         
         DispatchQueue.global().async { [weak self] in
@@ -86,7 +86,6 @@ final class ImageCollectionViewCell: UICollectionViewCell {
             let data = try! Data(contentsOf: url)
             
             DispatchQueue.main.async {
-                print("load \(indexPath.item)번째")
                 self.imageView.image = UIImage(data: data)
             }
         }
