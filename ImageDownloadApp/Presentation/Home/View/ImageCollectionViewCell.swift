@@ -10,10 +10,13 @@ import UIKit
 import SnapKit
 
 final class ImageCollectionViewCell: UICollectionViewCell {
+    let viewModel: HomeViewModel = HomeViewModel()
+    
     let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.image = UIImage(systemName: "photo")
+        view.clipsToBounds = true
         return view
     }()
     
@@ -22,6 +25,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
         view.setTitle("Load", for: .normal)
         view.backgroundColor = .blue
         view.setTitleColor(.white, for: .normal)
+        view.addTarget(self, action: #selector(loadImage), for: .touchUpInside)
         view.layer.cornerRadius = 5
         return view
     }()
@@ -39,7 +43,8 @@ final class ImageCollectionViewCell: UICollectionViewCell {
     
     private func configureUI() {
         [imageView, loadButton].forEach {
-            self.addSubview($0)
+//            self.addSubview($0)
+            contentView.addSubview($0)
         }
     }
     
@@ -55,6 +60,20 @@ final class ImageCollectionViewCell: UICollectionViewCell {
             make.centerY.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.3)
             make.height.equalToSuperview().multipliedBy(0.25)
+        }
+    }
+    
+    @objc func loadImage(_ sender: UIButton) {
+        imageView.image = UIImage(systemName: "photo")
+        let index = loadButton.tag
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
+            let url = URL(string: self.viewModel.imageURLs[index])!
+            let data = try! Data(contentsOf: url)
+            
+            DispatchQueue.main.async {
+                self.imageView.image = UIImage(data: data)
+            }
         }
     }
 }
