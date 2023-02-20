@@ -10,6 +10,7 @@ import UIKit
 final class HomeViewController: UIViewController {
     private let mainView: HomeView = HomeView()
     private let viewModel: HomeViewModel = HomeViewModel()
+    private var isLoadAll: Bool = false
     
     override func loadView() {
         self.view = mainView
@@ -24,6 +25,13 @@ final class HomeViewController: UIViewController {
     private func configureUI() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
+        mainView.loadAllButton.addTarget(self, action: #selector(loadAllData), for: .touchUpInside)
+    }
+    
+    @objc func loadAllData(_ sender: UIButton) {
+        isLoadAll = true
+        print(isLoadAll)
+        mainView.collectionView.reloadData()
     }
 }
 
@@ -37,15 +45,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         cell.loadButton.tag = indexPath.item
         
-//        DispatchQueue.global().async { [weak self] in
-//            guard let self = self else { return }
-//            let url = URL(string: self.viewModel.imageURLs[indexPath.item])!
-//            let data = try! Data(contentsOf: url)
-//
-//            DispatchQueue.main.async {
-//                cell.imageView.image = UIImage(data: data)
-//            }
-//        }
+        if isLoadAll {
+            cell.loadAllImage(indexPath: indexPath)
+        }
         
         return cell
     }

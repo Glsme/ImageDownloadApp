@@ -19,7 +19,7 @@ final class HomeView: UIView {
     
     let loadAllButton: UIButton = {
         let view = UIButton()
-        view.setTitle("Load", for: .normal)
+        view.setTitle("Load All Images", for: .normal)
         view.backgroundColor = .blue
         view.setTitleColor(.white, for: .normal)
         view.layer.cornerRadius = 10
