@@ -66,7 +66,7 @@
 		854F2B6329A3850900F80A6A /* ImageDownloadApp */ = {
 			isa = PBXGroup;
 			children = (
-				854F2B8F29A4F88000F80A6A /* Model */,
+				854F2B9029A4F95900F80A6A /* Data */,
 				854F2B7929A386EA00F80A6A /* Presentation */,
 				854F2B7A29A386F400F80A6A /* resource */,
 				854F2B7829A386E000F80A6A /* Application */,
@@ -145,12 +145,12 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		854F2B8F29A4F88000F80A6A /* Model */ = {
+		854F2B9029A4F95900F80A6A /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				854F2B8C29A39BB100F80A6A /* ImageURLs.swift */,
 			);
-			path = Model;
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
