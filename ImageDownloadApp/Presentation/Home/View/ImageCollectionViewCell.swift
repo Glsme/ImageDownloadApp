@@ -10,8 +10,6 @@ import UIKit
 import SnapKit
 
 final class ImageCollectionViewCell: UICollectionViewCell {
-    let viewModel: HomeViewModel = HomeViewModel()
-    
     let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
@@ -68,7 +66,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
         
         DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
-            let url = URL(string: self.viewModel.imageURLs[index])!
+            let url = URL(string: ImageURLs.imageURLs[index])!
             let data = try! Data(contentsOf: url)
             
             DispatchQueue.main.async {
@@ -82,7 +80,7 @@ final class ImageCollectionViewCell: UICollectionViewCell {
         
         DispatchQueue.global().async { [weak self] in
             guard let self = self else { return }
-            let url = URL(string: self.viewModel.imageURLs[indexPath.item])!
+            let url = URL(string: ImageURLs.imageURLs[indexPath.item])!
             let data = try! Data(contentsOf: url)
             
             DispatchQueue.main.async {

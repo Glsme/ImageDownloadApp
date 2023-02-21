@@ -9,7 +9,6 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     private let mainView: HomeView = HomeView()
-    private let viewModel: HomeViewModel = HomeViewModel()
     private var isLoadAll: Bool = false
     
     override func loadView() {
@@ -30,14 +29,13 @@ final class HomeViewController: UIViewController {
     
     @objc func loadAllData(_ sender: UIButton) {
         isLoadAll = true
-        print(isLoadAll)
         mainView.collectionView.reloadData()
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.imageURLs.count
+        return ImageURLs.imageURLs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

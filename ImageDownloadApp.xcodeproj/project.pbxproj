@@ -17,7 +17,7 @@
 		854F2B8329A38F5D00F80A6A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 854F2B8229A38F5D00F80A6A /* SnapKit */; };
 		854F2B8629A394DA00F80A6A /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F2B8529A394DA00F80A6A /* ReusableProtocol.swift */; };
 		854F2B8A29A3953000F80A6A /* ReusableProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F2B8929A3953000F80A6A /* ReusableProtocol+Extension.swift */; };
-		854F2B8D29A39BB100F80A6A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F2B8C29A39BB100F80A6A /* HomeViewModel.swift */; };
+		854F2B8D29A39BB100F80A6A /* ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854F2B8C29A39BB100F80A6A /* ImageURLs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		854F2B7F29A38D7B00F80A6A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		854F2B8529A394DA00F80A6A /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 		854F2B8929A3953000F80A6A /* ReusableProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableProtocol+Extension.swift"; sourceTree = "<group>"; };
-		854F2B8C29A39BB100F80A6A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		854F2B8C29A39BB100F80A6A /* ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +66,7 @@
 		854F2B6329A3850900F80A6A /* ImageDownloadApp */ = {
 			isa = PBXGroup;
 			children = (
+				854F2B8F29A4F88000F80A6A /* Model */,
 				854F2B7929A386EA00F80A6A /* Presentation */,
 				854F2B7A29A386F400F80A6A /* resource */,
 				854F2B7829A386E000F80A6A /* Application */,
@@ -104,7 +105,6 @@
 		854F2B7B29A387E100F80A6A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				854F2B8B29A39BAA00F80A6A /* ViewModel */,
 				854F2B7C29A387E900F80A6A /* View */,
 			);
 			path = Home;
@@ -145,12 +145,12 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		854F2B8B29A39BAA00F80A6A /* ViewModel */ = {
+		854F2B8F29A4F88000F80A6A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				854F2B8C29A39BB100F80A6A /* HomeViewModel.swift */,
+				854F2B8C29A39BB100F80A6A /* ImageURLs.swift */,
 			);
-			path = ViewModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +232,7 @@
 				854F2B8A29A3953000F80A6A /* ReusableProtocol+Extension.swift in Sources */,
 				854F2B6929A3850900F80A6A /* HomeViewController.swift in Sources */,
 				854F2B8029A38D7B00F80A6A /* ImageCollectionViewCell.swift in Sources */,
-				854F2B8D29A39BB100F80A6A /* HomeViewModel.swift in Sources */,
+				854F2B8D29A39BB100F80A6A /* ImageURLs.swift in Sources */,
 				854F2B8629A394DA00F80A6A /* ReusableProtocol.swift in Sources */,
 				854F2B7E29A3881B00F80A6A /* HomeView.swift in Sources */,
 				854F2B6529A3850900F80A6A /* AppDelegate.swift in Sources */,
